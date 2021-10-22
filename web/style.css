@@ -1,3 +1,20 @@
+*
+{
+    margin: 0;
+}
+
+html
+{
+    overflow-x:hidden;
+}
+
+a
+{
+    text-decoration: none;
+
+}
+
+
 .type1{
     position: relative;
     margin-left: 15%;
@@ -13,7 +30,7 @@
     position: absolute;
     width: 100%;
     height: 80%;
-    background: rgb(0, 48, 157);
+    background: aliceblue;
 }
 
 .podval {
@@ -22,4 +39,39 @@ position: absolute;
     width: 100%;
     height: 20%;
     background: rgb(0, 145, 157);
+}
+
+
+
+.top{
+    position: absolute;
+    width: 100%;
+    height: 20%;
+    background: antiquewhite;
+}
+
+
+.login{
+    position: relative;
+    left: 70%;
+}
+
+.lk img{
+
+}
+
+.main2{
+    position: absolute;
+    width: 100%;
+    height: 80%;
+    top: 20%;
+    background: aliceblue;
+}
+
+.main2 form p{
+    display: inline-block;
+}
+
+.main2 form input{
+    display: block;
 }

@@ -1,7 +1,45 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: kiril
- * Date: 22.10.2021
- * Time: 18:30
- */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Patient personal account</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="top">
+
+    <div class="logo">
+
+    </div>
+
+
+    <div class="lk">
+
+        <?php
+        session_start();
+        echo "<p class='login'>" . $_SESSION['login'] . "</p>";
+        ?>
+
+        <img src="">
+    </div>
+</div>
+
+<div class="main2">
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+</body>
+</html>
