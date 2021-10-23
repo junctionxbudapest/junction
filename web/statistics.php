@@ -27,8 +27,17 @@
 
 <div class="main2">
 
-    <a href="statistics.php"> <img style="width: 100%; top: 20%; position: relative;" src="img/patient_table.png"> </a> <!--we receive status, but because time-->
-    
+   <p class="d1">Patient</p>
+
+    <p class="d1">Cancer type</p>
+
+    <p class="d1">Status</p>
+
+
+
+    <p class="d2">Mark Jones</p>
+    <p class="d2">Lung cancer</p>
+    <p class="d2" style="color: red; margin-left: 7%;">Critical</p>
 </div>
 
 

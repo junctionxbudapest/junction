@@ -112,14 +112,14 @@ a
 
 .main2 h4 {
 font-size: 36px;
-    font-family: Alata serif;
+    font-family: Alata;
     margin-top: 4%;
     margin-bottom: 2%;
 }
 
 
 .time1{
-    font-family: 'Alata', sans-serif;
+    font-family: Alata;
     font-size: 30px;
     color: #999999;
 }
@@ -254,7 +254,7 @@ font-size: 36px;
     font-size: 30px;
     color: grey;
     margin-top: 3%;
-    font-family: Alata serif;
+    font-family: Alata;
 }
 
 .photo {
@@ -265,7 +265,7 @@ font-size: 36px;
 }
 
 .rec {
-    font-family: Alata serif;
+    font-family: Alata;
     font-size: 26px;
     display: inline-block;
     font-weight: bold;
@@ -314,4 +314,21 @@ position: relative;
     top: -10%;
     left: 12%;
     width: 44%;
+}
+
+.d1 {
+    font-family: Alata;
+    font-size: 32px;
+    display: inline-block;
+    margin-right: 19%;
+    margin-top: 6%;
+}
+
+.d2 {
+    font-family: Alata;
+    font-size: 32px;
+    display: inline-block;
+    margin-right: 12%;
+    color: #999999;
+    margin-top: 4%;
 }
