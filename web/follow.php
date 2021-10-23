@@ -12,19 +12,17 @@
 <body>
 <div class="top">
 
-    <div class="logo">
-
-    </div>
+    <a href="index.html"> <img class="logo2" src="img/logo2.png"></a>
 
 
     <div class="lk">
 
+      <a href="lk.php">  <img class="ava" src="img/ava.png"></a>
+
         <?php
         session_start();
-        echo "<p class='login'>" . $_SESSION['login'] . "</p>";
+        echo "<a href=\"lk.php\"> <p class='login'>" . $_SESSION['login'] . "</p></a>";
         ?>
-
-        <img src="">
     </div>
 </div>
 
@@ -35,10 +33,60 @@
     echo ("<h2 class='time1'>".$date_today."</h2>");
     ?>
 
-    <h1>How do you feel?</h1>
+
+    <form action="somewhere.php" method="POST"> <!--address here where to send data-->
+    <h1 style="margin-top: 1%;">How do you feel?</h1>
+
+        <p style="margin: 10px;">Weight</p> <input type="text" name="weight"> <br>
+       <p style="margin: 10px;">Sleep</p>  <input type="text" name="sleep">
+        <br>
+        <h1 style="font-size: 36px; color: black">Mood</h1><br>
+
+        <label class="mood" style="background: url(img/calm.png) no-repeat; background-size: 100% 100%; " ><input type="checkbox" name="mood" value=4></label>
+        <label class="mood" style="background: url(img/glad.png) no-repeat; background-size: 100% 100%; " ><input type="checkbox" name="mood" value=5></label>
+        <label class="mood" style="width: 100px; height: 140px; background: url(img/energetic.png) no-repeat; background-size: 90% 90%; " ><input type="checkbox" name="mood" value=5></label>
+        <label class="mood" style="width: 108px; height: 140px; background: url(img/annoyed.png) no-repeat; background-size: 90% 90%; " ><input type="checkbox" name="mood" value=2></label>
+        <label class="mood" style="background: url(img/swings.png) no-repeat; background-size: 100% 100%; " ><input type="checkbox" name="mood" value=3></label>
+        <label class="mood" style="background: url(img/sad.png) no-repeat; background-size: 100% 100%; " ><input type="checkbox" name="mood" value=1></label>
+        <label class="mood" style="background: url(img/alarmed.png) no-repeat; background-size: 100% 100%; " ><input type="checkbox" name="mood" value=1></label>
+        <label class="mood" style="background: url(img/apathy.png) no-repeat; background-size: 100% 100%; " ><input type="checkbox" name="mood" value=3></label>
+        <br>
+
     <h1>What procedure did you have recently?</h1>
+
+        <input class="t1" type="text" name="procedure" value="Type here...">
+
     <h1>Mark your symptoms</h1>
-    <h1>Recommendations</h1>
+
+        <img style="width: 90%; position: relative; left: 3%" src="img/symptoms.png">
+
+        <input class="t2" type="text" name="procedure" value="Indicate your other symptoms">
+
+
+
+        <img class="photo" src="img/photo.png">
+        <img class="photo" src="img/photo.png">
+        <img class="photo" src="img/photo.png">
+        <img class="photo" src="img/photo.png">
+
+        <h1>Recommendations</h1>
+
+
+
+        <img src="img/mark.png"><p class="rec">Visit a Doctor</p><br>
+        <img src="img/mark.png"><p class="rec">Take a blood test</p><br>
+        <img src="img/mark.png"><p class="rec">Make an ultrasound</p>
+
+        <input class="send_button" type="submit" value="">
+
+    </form>
+
+
+
+
+
+
+
 </div>
 
 

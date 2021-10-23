@@ -27,6 +27,8 @@
 <?php }
 else {?>
 
+    <div class="main" style="background: url(img/fon1.png) no-repeat center right; background-size: 80%;">
+
     <div class="login_form">
 
         <form action="login.php" method="POST"> <!--address here where to send data-->
@@ -38,9 +40,10 @@ else {?>
             <input type="hidden" name="form_submitted" value="1" />
 
 
-
            <input class="login_button" type="submit" value="">
         </form>
+
+    </div>
 
     </div>
 

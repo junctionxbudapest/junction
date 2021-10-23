@@ -32,32 +32,34 @@
 
 
     <form action="somewhere.php" method="POST"> <!--address here where to send data-->
-        <p>First name</p>
-        <input type="text" name="name">
+        <p>Name</p>
+        <input type="text" name="name"> <br>
 
-        <p>Second name</p>
-        <input type="text" name="surname">
+        <p>Sex</p>
+        <input type="radio" name="sex" value="male"> <p>male</p>
+        <input type="radio" name="sex" value="female"> <p>female</p> <br>
 
-        <p>Phone</p>
-        <input type="text" name="phone">
-
-        <p>Email</p>
-        <input type="text" name="mail">
+        <p>Age</p>
+        <input type="text" name="age"> <br>
 
         <p>Cancer type</p>
-        <input type="text" name="type">
+        <input type="text" name="type"> <br>
+
 
         <p>Stage</p>
-        <input type="text" name="stage">
+        <input type="radio" name="sex" value="1"> <p>1</p>
+        <input type="radio" name="sex" value="2"> <p>2</p>
+        <input type="radio" name="sex" value="3"> <p>3</p> <br>
 
         <p>Radiation therapy</p>
         <input type="radio" name="radiation" value="yes">
-        <input type="radio" name="radiation" value="no">
+        <input type="radio" name="radiation" value="no"> <br>
 
-        <p>Body area treated</p>
-        <input type="text" name="area">
+        <p>Weight</p>
+        <input type="text" value="weight"> <br>
 
-
+        <p>Height</p>
+        <input type="text" name="type"> <br>
 
         <input type="hidden" name="form_submitted" value="1" />
         <input type="submit" value="Submit">

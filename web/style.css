@@ -18,7 +18,7 @@ a
 
 .type1{
     position: relative;
-    left: 22%;
+    left: 20%;
     margin: 3%;
     width: 420px;
     height: 420px;
@@ -65,13 +65,16 @@ a
     position: absolute;
     width: 100%;
     height: 20%;
-    background: antiquewhite;
+    background: white;
 }
 
 
 .login{
     position: relative;
-    left: 70%;
+    size: 24px;
+    color: black;
+    font-family: Alata;
+    left: 0.5%;
 }
 
 .lk img{
@@ -87,18 +90,33 @@ a
     background: white;
 }
 
+
+
 .main2 form p{
     display: inline-block;
 }
 
 .main2 form input{
-    display: block;
+    display: inline-block;
 }
 
 .main2 h1{
-    font-size: 70px;
+    font-size: 60px;
+    position: relative;
     font-weight: 800;
+    margin-top: 3.4%;
+    color: #3664B6;
+
 }
+
+
+.main2 h4 {
+font-size: 36px;
+    font-family: Alata serif;
+    margin-top: 4%;
+    margin-bottom: 2%;
+}
+
 
 .time1{
     font-family: 'Alata', sans-serif;
@@ -122,10 +140,10 @@ a
 .login_form {
     position: relative;
     margin-top: 8%;
-    left: 35%;
+    left: 30%;
     background: url("img/login_form.png");
     background-size: 100% 100%;
-    width: 663px;
+    width: 617px;
     height: 671px;
 }
 
@@ -138,7 +156,7 @@ a
     position: relative;
     padding-left:32px;
     background-size: 28px;
-    width: 430px;
+    width: 400px;
     height: 62px;
     border: 1px;
     font-size: 30px;
@@ -153,7 +171,7 @@ a
     position: relative;
     padding-left:32px;
     background-size: 28px;
-    width: 430px;
+    width: 400px;
     height: 62px;
     border: 1px;
     font-size: 30px;
@@ -164,7 +182,7 @@ a
     left: 102px;
     margin-top: 5%;
     position: relative;
-    width: 444px;
+    width: 414px;
     height: 64px;
     background-size: 100%;
     border-radius: 4px;
@@ -175,4 +193,125 @@ a
 
 .login_button:hover{
     transform: scale(1.1, 1.1);
+}
+
+.logo2 {
+    margin-left: 0.5%;
+}
+
+.ava {
+
+}
+
+.lk{
+    position: relative;
+    left: 84%;
+    margin-top: -7%;
+}
+
+.mood {
+    width: 80px; /* Ширина рисунка */
+    height: 140px; /* Высота рисунка */
+    display: inline-block; /* Блочный элемент */
+    position: relative; /* Относительное позиционирование */
+    transition: 0.4s;
+    margin-left: 2.5%;
+    position: relative;
+}
+
+
+
+.mood:hover{
+    transform: scale(1.05, 1.05);
+}
+
+
+.mood input[type="checkbox"]{
+    display: none;
+}
+
+.mood input[type="checkbox"]:checked{
+    display: block;
+}
+
+.t1 {
+    width: 100%;
+    height: 36px;
+    background: #EAF2FD;
+    border-radius: 6px;
+    border: 0px;
+    font-size: 30px;
+    color: grey;
+    margin-top: 2%;
+}
+
+.t2 {
+    width: 100%;
+    height: 36px;
+    border-top: 0px;
+    border-right: 0px;
+    border-left: 0px;
+    font-size: 30px;
+    color: grey;
+    margin-top: 3%;
+    font-family: Alata serif;
+}
+
+.photo {
+    width: 200px;
+    margin-left: 2%;
+    margin-top: 5%;
+    cursor: pointer;
+}
+
+.rec {
+    font-family: Alata serif;
+    font-size: 26px;
+    display: inline-block;
+    font-weight: bold;
+    margin: 2%;
+}
+
+.send_button {
+    background: url(img/send.png) no-repeat center;
+    position: relative;
+    width: 45%;
+    height: 64px;
+    float: right;
+    background-size: 100%;
+    border-radius: 4px;
+    border: 1px;
+    transition: 0.5s;
+}
+
+
+.send_button:hover{
+    transform: scale(1.1, 1.1);
+}
+
+
+
+.login2{
+  font-family: Alata;
+    font-style: normal;
+    position: relative;
+    font-size: 54px;
+    display: inline-block;
+    top: -25%;
+    left: 5%;
+    color: #000000;
+}
+
+.status {
+position: relative;
+    top: -35%;
+    left: 55%;
+    width: 18%;
+}
+
+.appointment {
+    position: relative;
+    top: -10%;
+    left: 12%;
+    width: 44%;
 }
