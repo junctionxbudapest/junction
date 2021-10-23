@@ -1,6 +1,7 @@
 *
 {
     margin: 0;
+    font-family: 'Abhaya Libre', serif;
 }
 
 html
@@ -17,29 +18,46 @@ a
 
 .type1{
     position: relative;
-    margin-left: 15%;
-    top: 25%;
-    width: 30%;
-    height: 45%;
-    background-color: white;
+    left: 22%;
+    margin: 3%;
+    width: 420px;
+    height: 420px;
     background-size: 100% 100%;
     display: inline-block;
+    border-radius: 15px;
+    transition: 0.5s;
 }
+
+
+.type1:hover
+{
+    transform: scale(1.1, 1.1);
+}
+
+
 
 .main{
     position: absolute;
+
     width: 100%;
-    height: 80%;
-    background: aliceblue;
+    height: 100%;
+    background: #4680E5;
 }
 
-.podval {
-position: absolute;
-    top: 80%;
-    width: 100%;
-    height: 20%;
-    background: rgb(0, 145, 157);
+
+
+.main h1{
+    color: white;
 }
+
+
+/*.podval {*/
+/*position: absolute;*/
+    /*top: 80%;*/
+    /*width: 100%;*/
+    /*height: 20%;*/
+    /*background: rgb(0, 145, 157);*/
+/*}*/
 
 
 
@@ -62,10 +80,11 @@ position: absolute;
 
 .main2{
     position: absolute;
-    width: 100%;
-    height: 80%;
+    width: 60%;
+    height: 81%;
     top: 20%;
-    background: aliceblue;
+    left: 20%;
+    background: white;
 }
 
 .main2 form p{
@@ -74,4 +93,86 @@ position: absolute;
 
 .main2 form input{
     display: block;
+}
+
+.main2 h1{
+    font-size: 70px;
+    font-weight: 800;
+}
+
+.time1{
+    font-family: 'Alata', sans-serif;
+    font-size: 30px;
+    color: #999999;
+}
+
+.logo {
+    position: absolute;
+    margin: 1%;
+}
+
+.lang {
+    position: relative;
+    left: 90%;
+    margin-bottom: -2%;
+    top: 5%;
+    cursor: pointer;
+}
+
+.login_form {
+    position: relative;
+    margin-top: 8%;
+    left: 35%;
+    background: url("img/login_form.png");
+    background-size: 100% 100%;
+    width: 663px;
+    height: 671px;
+}
+
+.mail{
+    background: url(img/user.png) no-repeat center left;
+    background-color: white;
+    border-radius: 4px;
+    left: 95px;
+    margin-top: 310px;
+    position: relative;
+    padding-left:32px;
+    background-size: 28px;
+    width: 430px;
+    height: 62px;
+    border: 1px;
+    font-size: 30px;
+}
+
+.password{
+    background: url(img/key.png) no-repeat center left;
+    background-color: white;
+    border-radius: 4px;
+    left: 95px;
+    margin-top: 3.8%;
+    position: relative;
+    padding-left:32px;
+    background-size: 28px;
+    width: 430px;
+    height: 62px;
+    border: 1px;
+    font-size: 30px;
+}
+
+.login_button {
+    background: url(img/button_login.png) no-repeat center;
+    left: 102px;
+    margin-top: 5%;
+    position: relative;
+    width: 444px;
+    height: 64px;
+    background-size: 100%;
+    border-radius: 4px;
+    border: 1px;
+    transition: 0.5s;
+}
+
+
+.login_button:hover{
+    transform: scale(1.1, 1.1);
 }

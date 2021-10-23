@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <title>Varian </title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;800&family=Alata&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -23,17 +26,30 @@
 
 <?php }
 else {?>
-    <h2>Registration Form</h2>
-    <form action="login.php" method="POST"> <!--address here where to send data-->
-        <p>Login</p>
-        <input type="text" name="login">
 
-        <p>Password</p>
-        <input type="text" name="password">
+    <div class="login_form">
 
-        <input type="hidden" name="form_submitted" value="1" />
-        <input type="submit" value="Submit">
-    </form>
+        <form action="login.php" method="POST"> <!--address here where to send data-->
+
+            <input class="mail" type="text" name="login"  placeholder="patient1@gmail.com">
+
+            <input class="password" type="text" name="password" placeholder="********">
+
+            <input type="hidden" name="form_submitted" value="1" />
+
+
+
+           <input class="login_button" type="submit" value="">
+        </form>
+
+    </div>
+
+
+
+
+
+
+
 <?php }?>
 </body>
 </html>

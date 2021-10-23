@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <title>Patient personal account</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;800&family=Alata&display=swap" rel="stylesheet">
 </head>
 <body>
 <div class="top">
@@ -12,16 +15,16 @@
 
     </div>
 
+</div>
 
-    <div class="lk">
+<div class="lk2">
 
-        <?php
-        session_start();
-        echo "<p class='login'>" . $_SESSION['login'] . "</p>";
-        ?>
+    <?php
+    session_start();
+    echo "<p class='login'>" . $_SESSION['login'] . "</p>";
+    ?>
 
-        <img src="">
-    </div>
+    <img src="">
 </div>
 
 <div class="main2">
