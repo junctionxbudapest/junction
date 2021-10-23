@@ -16,7 +16,7 @@
 
     <div class="lk">
 
-        <a href="lk.php">  <img class="ava" src="img/doc.png"></a>
+        <a href="doctor.php">  <img class="ava" src="img/doc.png"></a>
 
         <?php
         session_start();
@@ -28,7 +28,9 @@
 <div class="main2">
 
     <a href="statistics.php"> <img style="width: 100%; top: 20%; position: relative;" src="img/patient_table.png"> </a> <!--we receive status, but because time-->
-    
+
+    <a href="reg.php" style="margin-left: 95%; position: relative; top: -65%; "> <img src="img/new.png"> </a>
+
 </div>
 
 

@@ -16,7 +16,7 @@
 
     <div class="lk">
 
-        <a href="lk.php">  <img class="ava" src="img/doc.png"></a>
+        <a href="doctor.php">  <img class="ava" src="img/doc.png"></a>
 
         <?php
         session_start();
