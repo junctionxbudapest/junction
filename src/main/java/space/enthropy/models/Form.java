@@ -3,7 +3,6 @@ package space.enthropy.models;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
-import org.joda.time.LocalDate;
 
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
@@ -46,7 +45,7 @@ public class Form extends PanacheEntity {
     }
 
     public Form(int mood, String sleep, double weight, double blood_pressure, double pulse, int skin_change, boolean hair_loss, boolean pain_chest, String custom_symptoms, Patient patient_form) {
-        this.dateTime = LocalDate.now().toDate();
+        this.dateTime = new Date();
         this.patient_form = patient_form;
         setMood(mood);
         this.sleep = sleep;
