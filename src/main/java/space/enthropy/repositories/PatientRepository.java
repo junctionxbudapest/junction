@@ -19,4 +19,11 @@ public class PatientRepository implements PanacheRepository<Patient> {
     public List<Patient> findByLastName(String last_name) {
         return list("last_name", last_name);
     }
+
+    public boolean hasLogin(String login) {
+        return find("login", login).count() >= 1;
+    }
+    public void updateStage(int stage) {
+        update("stage", stage);
+    }
 }

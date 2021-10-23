@@ -3,12 +3,14 @@ package space.enthropy.models;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
+import org.joda.time.LocalDate;
 
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.ws.rs.NotFoundException;
+import java.util.Date;
 
 
 @Entity
@@ -22,10 +24,18 @@ public class Form extends PanacheEntity {
     // Extra Info
     //
 
-    int rateOfCondition; // 0-10
-    int rateOfDeceaseIncreasing; // 0-10
-    int rateOfMedicalCure; // 0-10
-    String description; //
+
+    private Date dateTime;
+    private int mood;
+    private String sleep;
+    private double weight;
+    private double blood_pressure;
+    private double pulse;
+    private double bmi;
+    private int skin_change;
+    private boolean hair_loss;
+    private boolean pain_chest;
+    private String custom_symptoms;
 
     @ManyToOne(cascade = {javax.persistence.CascadeType.ALL})
     @JoinColumn(name = "patient_id")
@@ -35,30 +45,56 @@ public class Form extends PanacheEntity {
 
     }
 
-    public Patient getPatient_form() {
-        return patient_form;
+    public Form(int mood, String sleep, double weight, double blood_pressure, double pulse, int skin_change, boolean hair_loss, boolean pain_chest, String custom_symptoms, Patient patient_form) {
+        this.dateTime = LocalDate.now().toDate();
+        this.patient_form = patient_form;
+        setMood(mood);
+        this.sleep = sleep;
+        this.weight = weight;
+        this.blood_pressure = blood_pressure;
+        this.pulse = pulse;
+        setSkin_change(skin_change);
+        this.hair_loss = hair_loss;
+        this.pain_chest = pain_chest;
+        this.custom_symptoms = custom_symptoms;
+        this.bmi = weight / patient_form.getHeight();
     }
 
-    public Form(int rateOfCondition, int rateOfDeceaseIncreasing, int rateOfMedicalCure, String description, Patient patient_form) {
-        if ((rateOfCondition < 1 || rateOfCondition > 10)
-                || (rateOfDeceaseIncreasing < 1 || rateOfDeceaseIncreasing > 10)
-                || (rateOfMedicalCure < 1 || rateOfMedicalCure > 10)) {
+    public void setSkin_change(int skin_change) {
+        if (skin_change < 1 || skin_change > 5) {
             throw new NotFoundException();
         }
-        this.rateOfCondition = rateOfCondition;
-        this.rateOfDeceaseIncreasing = rateOfDeceaseIncreasing;
-        this.rateOfMedicalCure = rateOfMedicalCure;
-        this.description = description;
-        this.patient_form = patient_form;
+        this.skin_change = skin_change;
+    }
+
+    public void setMood(int mood) {
+        if (mood < 1 || mood > 5) {
+            throw new NotFoundException();
+        }
+        this.mood = mood;
     }
 
     @Override
     public String toString() {
         return "Form{" +
-                "rateOfCondition=" + rateOfCondition +
-                ", rateOfDeceaseIncreasing=" + rateOfDeceaseIncreasing +
-                ", rateOfMedicalCure=" + rateOfMedicalCure +
-                ", description='" + description + '\'' +
+                "dateTime=" + dateTime +
+                ", mood=" + mood +
+                ", sleep='" + sleep + '\'' +
+                ", weight=" + weight +
+                ", blood_pressure=" + blood_pressure +
+                ", pulse=" + pulse +
+                ", bmi=" + bmi +
+                ", skin_change=" + skin_change +
+                ", hair_loss=" + hair_loss +
+                ", pain_chest=" + pain_chest +
+                ", custom_symptoms='" + custom_symptoms + '\'' +
+                ", patient_form=" + patient_form +
                 '}';
     }
+
+    public Patient getPatient_form() {
+        return patient_form;
+    }
+
+
 }
