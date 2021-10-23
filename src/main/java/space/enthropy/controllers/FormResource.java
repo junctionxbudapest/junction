@@ -9,10 +9,7 @@ import space.enthropy.services.PatientService;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.transaction.Transactional;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.ws.rs.QueryParam;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.net.URI;
@@ -43,8 +40,30 @@ public class FormResource {
         Form form = new Form(mood, sleep, weight, blood_pressure, pulse, skin_change, hair_loss, pain_chest, custom_symptoms, p);
         Log.info(form);
         form.persist();
-        Log.info(patientService.response());
+        // Log.info(patientService.response(p.getCancer_type(), 20));
         return Response.created(URI.create("/form/" + form.id)).build();
+    }
 
+    @GET
+    @Path("/stage")
+    public Response stage(@QueryParam("id") Long id) {
+        Patient p = Patient.findById(id);
+        if (p.getStage() >= 3) {
+            p.setStage(1);
+        } else {
+            p.setStage(p.getStage() + 1);
+        }
+        update(p.id);
+        return Response.ok().build();
+    }
+
+    public Patient update(Long id) {
+        Patient entity = Patient.findById(id);
+        if (entity == null) {
+            throw new NotFoundException();
+        }
+        entity.setStage(entity.getStage() + 1);
+        Patient.persist(entity);
+        return entity;
     }
 }

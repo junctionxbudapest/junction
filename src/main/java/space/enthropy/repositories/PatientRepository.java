@@ -8,6 +8,7 @@ import java.util.List;
 
 @ApplicationScoped
 public class PatientRepository implements PanacheRepository<Patient> {
+
     public List<Patient> findByFirstName(String first_name) {
         return list("first_name", first_name);
     }
@@ -22,8 +23,5 @@ public class PatientRepository implements PanacheRepository<Patient> {
 
     public boolean hasLogin(String login) {
         return find("login", login).count() >= 1;
-    }
-    public void updateStage(int stage) {
-        update("stage", stage);
     }
 }

@@ -37,7 +37,7 @@ public class Form extends PanacheEntity {
     private boolean pain_chest;
     private String custom_symptoms;
 
-    @ManyToOne(cascade = {javax.persistence.CascadeType.ALL})
+    @ManyToOne(fetch = javax.persistence.FetchType.LAZY, cascade = javax.persistence.CascadeType.ALL)
     @JoinColumn(name = "patient_id")
     private Patient patient_form;
 
@@ -57,7 +57,7 @@ public class Form extends PanacheEntity {
         this.hair_loss = hair_loss;
         this.pain_chest = pain_chest;
         this.custom_symptoms = custom_symptoms;
-        this.bmi = weight / patient_form.getHeight();
+        this.bmi = (weight / patient_form.getHeight() / patient_form.getHeight()) * 703;
     }
 
     public void setSkin_change(int skin_change) {

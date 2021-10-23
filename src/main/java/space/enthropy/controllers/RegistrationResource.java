@@ -1,5 +1,8 @@
 package space.enthropy.controllers;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import io.quarkus.logging.Log;
 import io.quarkus.panache.common.Sort;
 import space.enthropy.models.Patient;
@@ -13,11 +16,17 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.net.URI;
+import java.util.ArrayList;
 import java.util.List;
+
+import static space.enthropy.models.SaveData.list;
+import static space.enthropy.models.SaveData.map;
 
 @ApplicationScoped
 @Path("/patient")
 public class RegistrationResource {
+
+
     @Inject
     PatientService patientService;
     @Inject
@@ -49,12 +58,48 @@ public class RegistrationResource {
                         @QueryParam("height") double height,
                         @QueryParam("weight") double weight) {
         Patient p = new Patient(first_name, last_name, gender, age, cancer_type, radiation_therapy, height, weight);
-        Log.info(patientService.response()); // показываю врачу ([tags...])
-        patientRepository.updateStage(1);
         Log.info(p);
         p.persist();
-        return Response.created(URI.create("/patient/" + p.id)).build();
+        return Response.created(URI.create("/patient/get/" + p.id)).build();
     }
+
+    @GET
+    @Path("/parse1/{id}")
+    @Produces(MediaType.TEXT_PLAIN)
+    public String parse1(@PathParam("id") Long id) throws JsonProcessingException {
+        System.out.println("STARTED");
+        Patient p = Patient.findById(id);
+        list = new ArrayList<>(List.of(p.getCancer_type(), "cancer", "follow-up"));
+        String result = patientService.response(list, 20); // показываю врачу ([tags...])
+        Log.info("Result it here " + result);
+        ObjectMapper mapper = new ObjectMapper();
+        map = mapper.readValue(result, new TypeReference<>(){});
+        System.out.println("Map here " + map);
+        list.addAll(map.get("keywords").subList(0, 2));
+        System.out.println("List is here " + list);
+        return map.toString();
+    }
+
+    @GET
+    @Path("/parse2/{id}")
+    @Produces(MediaType.TEXT_PLAIN)
+    public String parse2(@PathParam("id") Long id) throws JsonProcessingException {
+        System.out.println("STARTED");
+        Patient p = Patient.findById(id);
+        System.out.println("List2 " + list);
+        System.out.println("Map2 " + map);
+        String result = patientService.response(list, 10); // показываю врачу ([tags...])
+        Log.info("Result it here2 " + result);
+        ObjectMapper mapper = new ObjectMapper();
+        map = mapper.readValue(result, new TypeReference<>(){});
+        System.out.println("Map here2 " + map);
+        System.out.println("Keywords");
+        System.out.println(map.get("keywords"));
+        System.out.println("Links");
+        System.out.println(map.get("links"));
+        return map.toString();
+    }
+
 
     @DELETE
     @Path("/{id}")
@@ -65,19 +110,6 @@ public class RegistrationResource {
             throw new NotFoundException();
         }
         entity.delete();
-    }
-
-    @PUT
-    @Path("/{id}")
-    @Transactional
-    public Patient update(@PathParam("id") Long id, Patient p) {
-        Patient entity = Patient.findById(id);
-        if (entity == null) {
-            throw new NotFoundException();
-        }
-        entity = p;
-
-        return entity;
     }
 
 

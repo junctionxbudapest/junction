@@ -1,6 +1,5 @@
 package space.enthropy.models;
 
-
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
@@ -27,7 +26,8 @@ public class Patient extends PanacheEntity {
     private double height;
     private double weight;
     @Setter
-    private int stage = 0;
+    private int stage = 1;
+
 
     public Patient(String first_name, String last_name, String gender, int age, String cancer_type, boolean radiation_therapy, double height, double weight) {
         this.first_name = first_name;
@@ -58,19 +58,18 @@ public class Patient extends PanacheEntity {
                 ", weight=" + weight +
                 ", stage=" + stage +
                 ", forms=" + forms +
-                ", history=" + history +
                 '}';
     }
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "patient_form", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "patient_form", cascade = CascadeType.ALL)
     private final List<Form> forms = new ArrayList<>();
 
-    @OneToOne(mappedBy = "patient_history", cascade = CascadeType.ALL)
-    private History history;
-
-    public History getHistory() {
-        return history;
-    }
+//    @OneToOne(mappedBy = "patient_history", cascade = CascadeType.ALL)
+//    private History history;
+//
+//    public History getHistory() {
+//        return history;
+//    }
 
     public List<Form> getForms() {
         return forms;
