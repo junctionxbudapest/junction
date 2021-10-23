@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,58 +11,61 @@
 <body>
 <div class="top">
 
-    <div class="logo">
-
-    </div>
+    <a href="index.html"> <img class="logo2" src="img/logo2.png"></a>
 
 
     <div class="lk">
 
+        <a href="lk.php">  <img class="ava" src="img/doc.png"></a>
+
         <?php
         session_start();
-        echo "<p class='login'>" . $_SESSION['login'] . "</p>";
+        echo "<a href=\"lk.php\"> <p class='login'> Dr. Smith</p></a>";
         ?>
-
-        <img src="">
     </div>
 </div>
 
 <div class="main2">
 
-
-    <form action="somewhere.php" method="POST"> <!--address here where to send data-->
-        <p>Name</p>
-        <input type="text" name="name"> <br>
-
-        <p>Sex</p>
-        <input type="radio" name="sex" value="male"> <p>male</p>
-        <input type="radio" name="sex" value="female"> <p>female</p> <br>
-
-        <p>Age</p>
-        <input type="text" name="age"> <br>
-
-        <p>Cancer type</p>
-        <input type="text" name="type"> <br>
+    <h1>Please,<br> fill out the form</h1>
 
 
-        <p>Stage</p>
-        <input type="radio" name="sex" value="1"> <p>1</p>
-        <input type="radio" name="sex" value="2"> <p>2</p>
-        <input type="radio" name="sex" value="3"> <p>3</p> <br>
+    <form action="lk.php" method="POST"> <!--address here where to send data-->
+        <p class="treg">Name</p>
+        <input class="t1" style="display: inline-block; width: 80%" type="text" name="name"> <br>
 
-        <p>Radiation therapy</p>
-        <input type="radio" name="radiation" value="yes">
-        <input type="radio" name="radiation" value="no"> <br>
+        <p class="treg">Age</p>
+        <input class="t1" style="display: inline-block; width: 80%; margin-left: 2.7%" type="text" name="age" > <br>
 
-        <p>Weight</p>
-        <input type="text" value="weight"> <br>
+        <p class="treg">Sex</p>
+        <p style="font-size: 26px; margin-left: 0;" >Male</p> <input type="radio" name="sex" value="male">
+        <p style="font-size: 26px; margin-left: 2%;" >Female</p> <input type="radio" name="sex" value="female">  <br>
 
-        <p>Height</p>
-        <input type="text" name="type"> <br>
+
+        <p class="treg">Cancer type</p>
+        <input class="t1" style="display: inline-block; width: 73%;" type="text" name="type"> <br>
+
+
+        <p class="treg">Stage</p>
+        <p style="font-size: 26px; margin-left: 0; " >1</p> <input type="radio" name="sex" value="1">
+        <p style="font-size: 26px; margin-left: 2%; " >2</p><input type="radio" name="sex" value="2">
+        <p style="font-size: 26px; margin-left: 2%;" >3</p> <input type="radio" name="sex" value="3">  <br>
+
+        <p class="treg">Radiation therapy</p>
+        <p style="font-size: 26px" >Yes</p> <input type="radio" name="radiation" value="yes">
+        <p style="font-size: 26px; margin-left: 2%;" >No</p> <input type="radio" name="radiation" value="no"> <br>
+
+        <p class="treg">Weight</p>
+        <input class="t1" style="display: inline-block; width: 80%" type="text" name="weight"> <br>
+
+        <p class="treg">Height</p>
+        <input class="t1" style="display: inline-block; width: 80%; margin-left: 1%" type="text" name="type"> <br>
 
         <input type="hidden" name="form_submitted" value="1" />
-        <input type="submit" value="Submit">
+        <input class="send_button" style="float: none; margin-top: 3%; width: 33%;" type="submit" value="">
     </form>
+
+
 
 </div>
 

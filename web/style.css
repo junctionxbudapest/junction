@@ -332,3 +332,11 @@ position: relative;
     color: #999999;
     margin-top: 4%;
 }
+
+.treg {
+    font-family: Alata;
+    display: inline-block;
+    font-size: 26px;
+    margin-top: 2%;
+    margin-right: 2%;
+}
