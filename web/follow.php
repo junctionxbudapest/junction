@@ -34,11 +34,11 @@
     ?>
 
 
-    <form action="somewhere.php" method="POST"> <!--address here where to send data-->
+    <form action="lk.php" method="POST"> <!--address here where to send data-->
     <h1 style="margin-top: 1%;">How do you feel?</h1>
 
-        <p style="margin: 10px;">Weight</p> <input type="text" name="weight"> <br>
-       <p style="margin: 10px;">Sleep</p>  <input type="text" name="sleep">
+        <p class="treg" style="margin: 10px;">Weight</p> <input class="t1" style="width: 50%" type="text" name="weight"> <br>
+       <p class="treg" style="margin: 10px;">Sleep</p>  <input  class="t1" style="width: 50%; margin-left: 2.2%" type="text" name="sleep">
         <br>
         <h1 style="font-size: 36px; color: black">Mood</h1><br>
 
