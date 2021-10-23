@@ -20,7 +20,7 @@
 
         <?php
         session_start();
-        echo "<a href=\"lk.php\"> <p class='login'> Dr. Smith</p></a>";
+        echo "<a href=\"doctor.php\"> <p class='login'> Dr. Smith</p></a>";
         ?>
     </div>
 </div>

@@ -20,7 +20,7 @@
 
         <?php
         session_start();
-        echo "<a href=\"lk.php\"> <p class='login'> Dr. Smith</p></a>";
+        echo "<a href=\"doctor.php\"> <p class='login'> Dr. Smith</p></a>";
         ?>
     </div>
 </div>
@@ -30,7 +30,7 @@
     <h1>Please,<br> fill out the form</h1>
 
 
-    <form action="lk.php" method="POST"> <!--address here where to send data-->
+    <form action="statistics.php" method="POST"> <!--address here where to send data-->
         <p class="treg">Name</p>
         <input class="t1" style="display: inline-block; width: 80%" type="text" name="name"> <br>
 
