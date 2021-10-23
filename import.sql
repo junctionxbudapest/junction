@@ -1,13 +1,18 @@
 CREATE TABLE patient
 (
-    id         BIGINT NOT NULL,
-    login      VARCHAR(255),
-    first_name VARCHAR(255),
-    last_name  VARCHAR(255),
-    age        INTEGER,
+    id                BIGINT NOT NULL,
+    login             VARCHAR(255),
+    first_name        VARCHAR(255),
+    last_name         VARCHAR(255),
+    gender            VARCHAR(255),
+    age               INTEGER,
+    cancer_type       VARCHAR(255),
+    radiation_therapy BOOLEAN,
+    height            DOUBLE PRECISION,
+    weight            DOUBLE PRECISION,
+    stage             INTEGER,
     CONSTRAINT pk_patient PRIMARY KEY (id)
 );
-
 
 
 CREATE TABLE history
@@ -22,15 +27,21 @@ ALTER TABLE history
     ADD CONSTRAINT FK_HISTORY_ON_PATIENT FOREIGN KEY (patient_id) REFERENCES patient (id);
 
 
-
 CREATE TABLE form
 (
-    id                      BIGINT NOT NULL,
-    rateOfCondition         INTEGER,
-    rateOfDeceaseIncreasing INTEGER,
-    rateOfMedicalCure       INTEGER,
-    description             VARCHAR(255),
-    patient_id              BIGINT,
+    id              BIGINT NOT NULL,
+    dateTime        TIMESTAMP WITHOUT TIME ZONE,
+    mood            INTEGER,
+    sleep           VARCHAR(255),
+    weight          DOUBLE PRECISION,
+    blood_pressure  DOUBLE PRECISION,
+    pulse           DOUBLE PRECISION,
+    bmi             DOUBLE PRECISION,
+    skin_change     INTEGER,
+    hair_loss       BOOLEAN,
+    pain_chest      BOOLEAN,
+    custom_symptoms VARCHAR(255),
+    patient_id      BIGINT,
     CONSTRAINT pk_form PRIMARY KEY (id)
 );
 
