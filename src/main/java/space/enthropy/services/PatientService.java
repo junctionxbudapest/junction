@@ -28,10 +28,8 @@ public class PatientService {
         ObjectMapper mapper = new ObjectMapper();
         String json = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(data);
         System.out.println(json);
-//        Response response = target.request().post(Entity.json(json));
         CompletionStage<Response> r = target.request().rx().post(Entity.json(json));
         Response response = r.toCompletableFuture().get();
-        // CompletionStage<Response> r = target.request().rx().get();
         return response.readEntity(String.class);
     }
 }
