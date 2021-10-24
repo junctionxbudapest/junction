@@ -1,0 +1,16 @@
+version: "3.6"
+
+services:
+
+  ml-api:
+    restart: always
+    env_file:
+      - .env
+    build:
+      context: ./
+      network: host
+    image: ml-api:latest
+    ports: 
+      - 6677:6677
+    volumes:
+      - ./:/app
