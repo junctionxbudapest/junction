@@ -19,7 +19,7 @@ public class PatientService {
     @SneakyThrows
     public String response(ArrayList<String> types, int keywoard) {
         Client client = ResteasyClientBuilder.newClient();
-        WebTarget target = client.target("http://20.71.140.143:6666/get_search_keywords/");
+        WebTarget target = client.target("http://20.71.140.143:6677/get_search_keywords/");
         HashMap<String, Object> data = new HashMap<>();
 
 

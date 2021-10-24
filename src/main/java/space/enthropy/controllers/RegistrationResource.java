@@ -54,26 +54,28 @@ public class RegistrationResource {
                         @QueryParam("gender") String gender,
                         @QueryParam("age") int age,
                         @QueryParam("cancer_type") String cancer_type,
+                        @QueryParam("stage") int stage,
                         @QueryParam("radiation_therapy") boolean radiation_therapy,
                         @QueryParam("height") double height,
                         @QueryParam("weight") double weight) {
-        Patient p = new Patient(first_name, last_name, gender, age, cancer_type, radiation_therapy, height, weight);
+        Patient p = new Patient(first_name, last_name, gender, age, cancer_type, stage, radiation_therapy, height, weight);
         Log.info(p);
         p.persist();
-        return Response.created(URI.create("/patient/get/" + p.id)).build();
+        return Response.seeOther(URI.create("/login.html")).build();
     }
 
     @GET
     @Path("/parse1/{id}")
     @Produces(MediaType.TEXT_PLAIN)
-    public String parse1(@PathParam("id") Long id) throws JsonProcessingException {
+    public String parse1(@PathParam("id") String login) throws JsonProcessingException {
         System.out.println("STARTED");
-        Patient p = Patient.findById(id);
+        Patient p = patientRepository.findByLogin(login);
         list = new ArrayList<>(List.of(p.getCancer_type(), "cancer", "follow-up"));
         String result = patientService.response(list, 20); // показываю врачу ([tags...])
         Log.info("Result it here " + result);
         ObjectMapper mapper = new ObjectMapper();
-        map = mapper.readValue(result, new TypeReference<>(){});
+        map = mapper.readValue(result, new TypeReference<>() {
+        });
         System.out.println("Map here " + map);
         list.addAll(map.get("keywords").subList(0, 2));
         System.out.println("List is here " + list);
@@ -83,15 +85,16 @@ public class RegistrationResource {
     @GET
     @Path("/parse2/{id}")
     @Produces(MediaType.TEXT_PLAIN)
-    public String parse2(@PathParam("id") Long id) throws JsonProcessingException {
+    public String parse2(@PathParam("id") String login) throws JsonProcessingException {
         System.out.println("STARTED");
-        Patient p = Patient.findById(id);
+        Patient p = patientRepository.findByLogin(login);
         System.out.println("List2 " + list);
         System.out.println("Map2 " + map);
         String result = patientService.response(list, 10); // показываю врачу ([tags...])
         Log.info("Result it here2 " + result);
         ObjectMapper mapper = new ObjectMapper();
-        map = mapper.readValue(result, new TypeReference<>(){});
+        map = mapper.readValue(result, new TypeReference<>() {
+        });
         System.out.println("Map here2 " + map);
         System.out.println("Keywords");
         System.out.println(map.get("keywords"));

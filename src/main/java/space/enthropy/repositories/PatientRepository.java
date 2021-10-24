@@ -9,6 +9,10 @@ import java.util.List;
 @ApplicationScoped
 public class PatientRepository implements PanacheRepository<Patient> {
 
+    public Patient findByLogin(String login) {
+        return find("login", login).firstResult();
+    }
+
     public List<Patient> findByFirstName(String first_name) {
         return list("first_name", first_name);
     }

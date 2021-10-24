@@ -11,6 +11,7 @@ import javax.inject.Inject;
 import javax.transaction.Transactional;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.NewCookie;
 import javax.ws.rs.core.Response;
 import java.net.URI;
 
@@ -35,13 +36,13 @@ public class FormResource {
                         @QueryParam("hair_loss") boolean hair_loss,
                         @QueryParam("pain_chest") boolean pain_chest,
                         @QueryParam("custom_symptoms") String custom_symptoms,
-                        @QueryParam("id") Long id) {
-        Patient p = patientRepository.findByIdOptional(id).orElseThrow();
+                        @CookieParam("login") NewCookie cookie) {
+        Patient p = patientRepository.findByLogin(cookie.getName());
         Form form = new Form(mood, sleep, weight, blood_pressure, pulse, skin_change, hair_loss, pain_chest, custom_symptoms, p);
         Log.info(form);
         form.persist();
         // Log.info(patientService.response(p.getCancer_type(), 20));
-        return Response.created(URI.create("/form/" + form.id)).build();
+        return Response.seeOther(URI.create("/lk.html")).build();
     }
 
     @GET

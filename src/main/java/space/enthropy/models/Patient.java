@@ -26,15 +26,16 @@ public class Patient extends PanacheEntity {
     private double height;
     private double weight;
     @Setter
-    private int stage = 1;
+    private int stage;
 
 
-    public Patient(String first_name, String last_name, String gender, int age, String cancer_type, boolean radiation_therapy, double height, double weight) {
+    public Patient(String first_name, String last_name, String gender, int age, String cancer_type, int stage, boolean radiation_therapy, double height, double weight) {
         this.first_name = first_name;
         this.last_name = last_name;
         this.gender = gender.toLowerCase();
         this.age = age;
         this.cancer_type = cancer_type.toLowerCase();
+        this.stage = stage;
         this.radiation_therapy = radiation_therapy;
         this.height = height;
         this.weight = weight;
@@ -57,7 +58,6 @@ public class Patient extends PanacheEntity {
                 ", height=" + height +
                 ", weight=" + weight +
                 ", stage=" + stage +
-                ", forms=" + forms +
                 '}';
     }
 
